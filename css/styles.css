@@ -1,0 +1,284 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap");
+
+html {
+    scroll-behavior: smooth;
+}
+
+.poppins-extralight {
+    font-family: "Poppins", sans-serif system-ui;
+    font-weight: 900;
+    font-style: italic;
+    color: #ba0202;
+}
+/* CSS untuk navbar transparan */
+.navbar-transparent {
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+/* CSS untuk navbar saat discroll */
+.navbar-scrolled {
+    background-color: white;
+    transition: background-color 0.3s ease;
+}
+
+/* Mengubah warna teks saat navbar menjadi putih */
+.navbar-scrolled .nav-link {
+    color: #000; /* Ganti warna teks menjadi hitam saat navbar putih */
+}
+
+/* Untuk efek pada hover */
+.navbar-dark .nav-link:hover {
+    color: #ea3323; /* Ganti warna saat hover */
+}
+
+/* Navbar background color */
+.navbar {
+    background-color: #fff; /* Warna latar belakang putih */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan halus */
+}
+
+/* Navbar brand color */
+.navbar-brand {
+    color: #000 !important; /* Warna hitam untuk teks brand */
+}
+
+/* Navbar links style */
+.navbar-dark .navbar-nav .nav-link {
+    color: #000 !important; /* Warna hitam untuk link navbar */
+    font-weight: 500; /* Sedikit menebalkan font */
+}
+
+/* Hover state for navbar links */
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #ea3323 !important; /* Warna kuning saat hover */
+}
+
+/* Active link styling */
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #ea3323 !important; /* Warna kuning untuk link aktif */
+    border-bottom: 2px solid #ea3323;
+    font-weight: bold; /* Garis bawah untuk menandai link aktif */
+}
+/* Style for the navbar toggler icon */
+.navbar-toggler {
+    border-color: transparent; /* Menghapus border jika ada */
+}
+
+.navbar-toggler:focus {
+    outline: none; /* Menghapus outline saat toggle dalam fokus */
+}
+
+/* Customizing the toggler icon to grey */
+.navbar-toggler-icon {
+    background-image: none; /* Menghapus gambar default */
+}
+
+.navbar-toggler-icon::before {
+    content: ""; /* Menambahkan icon baru */
+    display: block; /* Menampilkan icon baru sebagai block */
+    width: 30px; /* Sesuaikan lebar */
+    height: 2px; /* Ketebalan garis */
+    background-color: grey; /* Warna abu-abu */
+    position: relative; /* Memungkinkan penggunaan absolute positioning */
+}
+
+.navbar-toggler-icon::after {
+    content: ""; /* Menambahkan icon baru */
+    display: block; /* Menampilkan icon baru sebagai block */
+    width: 30px; /* Sesuaikan lebar */
+    height: 2px; /* Ketebalan garis */
+    background-color: grey; /* Warna abu-abu */
+    position: relative; /* Memungkinkan penggunaan absolute positioning */
+    margin-top: 5px; /* Jarak antar garis */
+}
+
+/* hero */
+/* Hero section background */
+#home {
+    background-color: #000; /* Latar belakang hitam */
+    padding: 60px 0; /* Padding atas dan bawah */
+    color: #fff; /* Teks warna putih */
+}
+
+/* Styling tombol dengan ikon WhatsApp */
+.btn-custom {
+    display: inline-flex;
+    align-items: center; /* Untuk mengatur ikon dan teks secara sejajar */
+    background-color: transparent; /* Transparan sebelum hover */
+    border: 2px solid #28a745; /* Border kuning */
+    border-radius: 50px; /* Border rounded */
+    color: #28a745; /* Warna teks dan ikon kuning */
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s, color 0.3s; /* Animasi transisi untuk efek hover */
+}
+
+/* Hover efek: background hijau, teks putih */
+.btn-custom:hover {
+    background-color: #28a745; /* Warna hijau saat di hover */
+    color: #fff; /* Warna teks putih saat hover */
+    border-color: #28a745; /* Ubah border jadi hijau juga */
+}
+
+.btn-custom i {
+    font-size: 1.5rem; /* Ukuran ikon WhatsApp */
+}
+/* style font home */
+.open-sans-h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* Responsive adjustment */
+@media (max-width: 992px) {
+    #home {
+        padding: 40px 0;
+    }
+
+    #home h1 {
+        font-size: 2rem;
+    }
+
+    #home p {
+        font-size: 1.1rem;
+    }
+
+    .btn-custom {
+        font-size: 1rem;
+    }
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+.section-title {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: italic;
+}
+.custom-hr {
+    border: 0; /* Menghilangkan border default */
+    height: 4px; /* Tinggi garis */
+    background-color: #ea3323; /* Warna garis */
+    width: 10%; /* Lebar garis */
+    margin: 10px auto; /* Margin untuk menempatkan garis di tengah */
+    border-radius: 5px; /* Mengatur sudut menjadi bulat */
+}
+.hover-effect {
+    position: relative; /* Posisi relatif untuk efek naik */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi untuk efek naik dan bayangan */
+    border: 2px solid transparent; /* Border awal transparan */
+}
+
+.hover-effect:hover {
+    transform: translateY(-10px); /* Mengangkat elemen saat di-hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Bayangan saat di-hover */
+    border-color: #ea3323; /* Warna border saat di-hover */
+}
+.hover-effect:hover h3 {
+    color: #ea3323; /* Ubah warna sesuai kebutuhan */
+}
+/* paket */
+.paket {
+    padding: 60px 0; /* Menambahkan padding untuk section paket */
+}
+
+.package-title {
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+
+.price-month {
+    margin: 0;
+}
+
+.package-feature {
+    margin: 15px 0;
+    display: flex;
+    align-items: center; /* Rata tengah secara vertikal */
+}
+
+.package-feature svg {
+    margin-right: 10px; /* Menambahkan jarak antara ikon dan teks */
+}
+.hover-effect:hover .package-title,
+.hover-effect:hover .price-month,
+.hover-effect:hover h1 {
+    color: #ea3323; /* Warna teks paket menjadi merah */
+}
+.kontak {
+    background-color: #f9f9f9; /* Latar belakang yang ringan */
+}
+
+.info {
+    padding: 20px; /* Padding untuk bagian informasi */
+    border-top: 4px solid #75fb4c; /* Border atas warna hijau */
+    border-bottom: 4px solid #75fb4c; /* Border bawah warna hijau */
+    background-color: white; /* Latar belakang putih untuk informasi */
+}
+
+.php-email-form {
+    padding: 20px; /* Padding untuk formulir */
+    border-top: 4px solid #75fb4c; /* Border atas warna hijau */
+    border-bottom: 4px solid #75fb4c; /* Border bawah warna hijau */
+    background-color: white; /* Latar belakang putih untuk formulir */
+}
+
+.php-email-form .form-control {
+    border-radius: 5px; /* Sudut border yang bulat */
+    padding: 10px; /* Padding untuk input */
+}
+
+.php-email-form button {
+    background-color: #25d366; /* Warna tombol */
+    color: white; /* Warna teks tombol */
+    border: none; /* Tanpa border pada tombol */
+    border-radius: 5px; /* Sudut border yang bulat pada tombol */
+    padding: 10px 20px; /* Padding tombol */
+    transition: background-color 0.3s ease; /* Transisi saat hover */
+}
+
+.php-email-form button:hover {
+    background-color: #128c7e; /* Warna saat hover */
+}
+
+.map-container {
+    margin-top: 20px; /* Spasi atas untuk peta */
+}
+.info .address,
+.info .email,
+.info .phone {
+    display: flex;
+    align-items: center; /* Vertikal center align ikon dan teks */
+}
+
+.info .address svg,
+.info .email i,
+.info .phone i {
+    font-size: 24px; /* Ukuran ikon */
+    margin-right: 10px; /* Jarak antara ikon dan teks */
+}
+.icon-container {
+    margin-right: 10px; /* Jarak antara ikon dan teks */
+}
+
+.address,
+.email,
+.phone {
+    display: flex; /* Membuat konten dalam baris */
+    align-items: center; /* Vertikal pusatkan isi */
+    margin-top: 5px; /* Sedikit jarak ke atas */
+}
+
+.address span,
+.email i,
+.phone i {
+    font-size: 28px; /* Ukuran ikon yang lebih besar */
+    color: #ea3323; /* Warna ikon */
+}
