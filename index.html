@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Affordable Wi-Fi installation service with fast internet at Rambo Network. Get it for just 150rb a month!">
+    <title>Rambo Network</title>
+    <!-- style -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="icon" href="{{ asset('rambo.svg') }}" type="image/svg+xml">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+</head>
+
+<body>
+    <!-- preloader -->
+    <div id="preloader" style="display: flex; justify-content: center; align-items: center; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.8); z-index: 9999;">
+        <img src="{{ asset('images/loading.gif') }}" alt="Loading..." style="width: 100px; height: 100px;" />
+    </div>
+
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-transparen shadow-lg fixed-top navbar-transparent">
+        <div class="container d-flex align-items-center">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="{{ asset('rambo.svg') }}" alt="Rambo Network Logo" width="50" class="me-2">
+                <span class="poppins-extralight">RAMBO <br> NETWORK</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#EA3323">
+                    <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                </svg>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#service">Service</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#paket">Paket</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#kontak">Kontak</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- home -->
+    <section id="home" class="d-flex align-items-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
+                    <img src="{{ asset('/images/bg-hero.jpg') }}" alt="Hero Image" class="img-fluid rounded float-start" width="400">
+                </div>
+                <div class="col-lg-6 text-center text-lg-start">
+                    <h1 class="animated-text open-sans-h1" data-aos="fade-left" data-aos-delay="400">Pasang baru hanya Rp 50.000</h1>
+                    <p class="text-light " data-aos="fade-up-left" data-aos-delay="600">Dapatkan koneksi internet cepat dengan biaya terjangkau</p>
+                    <!-- Button with WhatsApp icon -->
+                    <a href="https://wa.me/6289510811261?text=Halo%20admin%2CSaya%20ingin%20berlanggan%20Rambo%20wifi" class="btn btn-custom btn-lg mt-4" data-aos="zoom-in-up" data-aos-delay="800">
+                        <i class="fa-brands fa-whatsapp me-2"></i> Daftar Sekarang
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- about -->
+    <section id="about" class="about">
+        <div class="container aos-init aos-animate">
+            <div class="border mb-4" style="border-bottom: 2px solid #EA3323;"></div>
+            <div class="section-title text-center" data-aos="fade-down" data-aos-delay="1000">
+                <h2>Tentang Kami</h2>
+                <hr class="custom-hr"> <br>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-3 col-md-6 text-center" data-aos="flip-right" data-aos-delay="1200">
+                    <div class="border rounded p-4 mt-3 hover-effect">
+                        <i class="fa-solid fa-map-marker-alt fa-2x mb-3" style="color: #EA3323;"></i>
+                        <h3>7+</h3>
+                        <p>Jumlah Kota</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center" data-aos="flip-right" data-aos-delay="1200">
+                    <div class="border rounded p-4 mt-3 hover-effect">
+                        <i class="fa-solid fa-users fa-2x mb-3" style="color: #EA3323;"></i>
+                        <h3>2800+</h3>
+                        <p>Jumlah Customer</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center" data-aos="flip-right" data-aos-delay="1200">
+                    <div class="border rounded p-4 mt-3 hover-effect">
+                        <i class="fa-solid fa-user-tie fa-2x mb-3" style="color: #EA3323;"></i>
+                        <h3>13+</h3>
+                        <p>Tenaga Ahli</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center" data-aos="flip-right" data-aos-delay="1200">
+                    <div class="border rounded p-4 mt-3 hover-effect">
+                        <i class="fa-solid fa-headset fa-2x mb-3" style="color: #EA3323;"></i>
+                        <h3>24/7</h3>
+                        <p>Support</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row content justify-content-center mt-4 pt-5">
+                <div class="col-lg-12" data-aos="flip-right">
+                    <p>
+                        PT. Rambo Network adalah penyedia layanan internet (ISP) yang berkomitmen untuk menghadirkan koneksi internet cepat, stabil, dan andal bagi masyarakat Indonesia. Berdiri sejak 2022, Rambo telah menjadi mitra utama bagi ribuan rumah tangga, bisnis, dan organisasi di seluruh negeri, dengan jaringan yang menjangkau area perkotaan hingga pedesaan. <br> <br>
+                        Kami memahami bahwa internet adalah jantung dari aktivitas sehari-hari, mulai dari hiburan, komunikasi, hingga bisnis. Oleh karena itu, kami fokus untuk memberikan layanan berkualitas dengan teknologi terbaru dan dukungan pelanggan yang profesional, agar Anda selalu terhubung kapan saja dan di mana saja.
+                        <br> <br>
+                        Di Rambo, kami percaya bahwa setiap orang berhak mendapatkan akses internet yang mudah dan terjangkau. Dengan berbagai pilihan paket internet yang fleksibel dan sesuai dengan kebutuhan, kami berusaha memastikan bahwa semua lapisan masyarakat dapat menikmati kecepatan internet terbaik tanpa kompromi
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- service -->
+    <section id="service" class="services">
+        <div class="container aos-init aos-animate">
+            <div class="section-title text-center" data-aos="fade-down">
+                <h2>Our Services
+                    <hr class="custom-hr">
+                </h2>
+
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-3 col-md-6 mt-3 text-center" data-aos="flip-right" data-aos-delay="200">
+                    <div class="border rounded p-4 hover-effect text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#EA3323">
+                            <path d="M418-340q24 24 62 23.5t56-27.5l224-336-336 224q-27 18-28.5 55t22.5 61Zm62-460q59 0 113.5 16.5T696-734l-76 48q-33-17-68.5-25.5T480-720q-133 0-226.5 93.5T160-400q0 42 11.5 83t32.5 77h552q23-38 33.5-79t10.5-85q0-36-8.5-70T766-540l48-76q30 47 47.5 100T880-406q1 57-13 109t-41 99q-11 18-30 28t-40 10H204q-21 0-40-10t-30-28q-26-45-40-95.5T80-400q0-83 31.5-155.5t86-127Q252-737 325-768.5T480-800Zm7 313Z" />
+                        </svg>
+                        <h3>High Speed</h3>
+                        <p>Kecepatan internet tinggi untuk pengalaman berselancar yang optimal.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mt-3 text-center" data-aos="flip-right" data-aos-delay="400">
+                    <div class="border rounded p-4 pb-5 hover-effect text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#EA3323">
+                            <path d="M480-120q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29ZM254-346l-84-86q59-59 138.5-93.5T480-560q92 0 171.5 35T790-430l-84 84q-44-44-102-69t-124-25q-66 0-124 25t-102 69ZM84-516 0-600q92-94 215-147t265-53q142 0 265 53t215 147l-84 84q-77-77-178.5-120.5T480-680q-116 0-217.5 43.5T84-516Z" />
+                        </svg>
+                        <h3>Wireless</h3>
+                        <p>Koneksi nirkabel yang stabil dan cepat di seluruh rumah Anda.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mt-3 text-center" data-aos="flip-right" data-aos-delay="600">
+                    <div class="border rounded p-4 hover-effect text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#EA3323">
+                            <path d="M480-40q-112 0-206-51T120-227v107H40v-240h240v80h-99q48 72 126.5 116T480-120q75 0 140.5-28.5t114-77q48.5-48.5 77-114T840-480h80q0 91-34.5 171T791-169q-60 60-140 94.5T480-40Zm-36-160v-52q-47-11-76.5-40.5T324-370l66-26q12 41 37.5 61.5T486-314q33 0 56.5-15.5T566-378q0-29-24.5-47T454-466q-59-21-86.5-50T340-592q0-41 28.5-74.5T446-710v-50h70v50q36 3 65.5 29t40.5 61l-64 26q-8-23-26-38.5T482-648q-35 0-53.5 15T410-592q0 26 23 41t83 35q72 26 96 61t24 77q0 29-10 51t-26.5 37.5Q583-274 561-264.5T514-250v50h-70ZM40-480q0-91 34.5-171T169-791q60-60 140-94.5T480-920q112 0 206 51t154 136v-107h80v240H680v-80h99q-48-72-126.5-116T480-840q-75 0-140.5 28.5t-114 77q-48.5 48.5-77 114T120-480H40Z" />
+                        </svg>
+                        <h3>Cheapest Price</h3>
+                        <p>Paket internet dengan harga terjangkau tanpa mengorbankan kualitas.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mt-3 text-center" data-aos="flip-right" data-aos-delay="800">
+                    <div class="border rounded p-4 pb-5 hover-effect text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#EA3323">
+                            <path d="M220-260q-92 0-156-64T0-480q0-92 64-156t156-64q37 0 71 13t61 37l68 62-60 54-62-56q-16-14-36-22t-42-8q-58 0-99 41t-41 99q0 58 41 99t99 41q22 0 42-8t36-22l310-280q27-24 61-37t71-13q92 0 156 64t64 156q0 92-64 156t-156 64q-37 0-71-13t-61-37l-68-62 60-54 62 56q16 14 36 22t42 8q58 0 99-41t41-99q0-58-41-99t-99-41q-22 0-42 8t-36 22L352-310q-27 24-61 37t-71 13Z" />
+                        </svg>
+                        <h3>Unlimited</h3>
+                        <p>Koneksi tanpa batas untuk semua kebutuhan online Anda.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- paket -->
+    <section id="paket" class="paket">
+        <div class="container aos-init aos-animate">
+            <div class="section-title text-center" data-aos="fade-down">
+                <h2>Paket Internet
+                    <hr class="custom-hr">
+                </h2>
+
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3 mt-4 mt-lg-0 aos-init aos-animate" data-aos="fade-up">
+                    <div class="box border rounded p-5 hover-effect text-center">
+                        <h4 class="package-title">RAMBO XS</h4>
+                        <h1><sup>Rp</sup>150k</h1>
+                        <p class="price-month">per month</p>
+                        <div class="package-feature">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#75FB4C">
+                                <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+                            </svg>
+                            Speed Up to 6 Mbps
+                        </div>
+                        <div class="package-feature">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#75FB4C">
+                                <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+                            </svg>
+                            Bandwidth UNLIMITED
+                        </div>
+                        <a href="https://wa.me/6289510811261?text=Halo%20admin%2CSaya%20ingin%20berlanggan%20Rambo%20wifi" class="btn btn-custom btn-lg mt-4" data-aos="zoom-in-up">
+                            <i class="fa-brands fa-whatsapp me-2"></i> Pesan
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 mt-4 mt-lg-0 aos-init aos-animate" data-aos="fade-up">
+                    <div class="box border rounded p-5 hover-effect text-center">
+                        <h4 class="package-title">RAMBO S</h4>
+                        <h1><sup>Rp</sup>165k</h1>
+                        <p class="price-month">per month</p>
+                        <div class="package-feature">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#75FB4C">
+                                <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+                            </svg>
+                            Speed Up to 8 Mbps
+                        </div>
+                        <div class="package-feature">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#75FB4C">
+                                <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+                            </svg>
+                            Bandwidth UNLIMITED
+                        </div>
+                        <a href="https://wa.me/6289510811261?text=Halo%20admin%2CSaya%20ingin%20berlanggan%20Rambo%20wifi" class="btn btn-custom btn-lg mt-4" data-aos="zoom-in-up">
+                            <i class="fa-brands fa-whatsapp me-2"></i> Pesan
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 mt-4 mt-lg-0 aos-init aos-animate" data-aos="fade-up">
+                    <div class="box border rounded p-5 hover-effect text-center">
+                        <h4 class="package-title">RAMBO M</h4>
+                        <h1><sup>Rp</sup>200k</h1>
+                        <p class="price-month">per month</p>
+                        <div class="package-feature">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#75FB4C">
+                                <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+                            </svg>
+                            Speed Up to 10 Mbps
+                        </div>
+                        <div class="package-feature">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#75FB4C">
+                                <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+                            </svg>
+                            Bandwidth UNLIMITED
+                        </div>
+                        <a href="https://wa.me/6289510811261?text=Halo%20admin%2CSaya%20ingin%20berlanggan%20Rambo%20wifi" class="btn btn-custom btn-lg mt-4" data-aos="zoom-in-up">
+                            <i class="fa-brands fa-whatsapp me-2"></i> Pesan
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 mt-4 mt-lg-0 aos-init aos-animate" data-aos="fade-up">
+                    <div class="box border rounded p-5 hover-effect text-center">
+                        <h4 class="package-title">RAMBO L</h4>
+                        <h1><sup>Rp</sup>215k</h1>
+                        <p class="price-month">per month</p>
+                        <div class="package-feature">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#75FB4C">
+                                <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+                            </svg>
+                            Speed Up to 15 Mbps
+                        </div>
+                        <div class="package-feature">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#75FB4C">
+                                <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+                            </svg>
+                            Bandwidth UNLIMITED
+                        </div>
+                        <a href="https://wa.me/6289510811261?text=Halo%20admin%2CSaya%20ingin%20berlanggan%20Rambo%20wifi" class="btn btn-custom btn-lg mt-4" data-aos="zoom-in-up">
+                            <i class="fa-brands fa-whatsapp me-2"></i> Pesan
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- kontak -->
+    <section id="kontak" class="kontak py-5">
+        <div class="container">
+            <div class="section-title text-center" data-aos="fade-down">
+                <h2>Kontak Kami
+                    <hr class="custom-hr">
+                </h2>
+
+            </div>
+
+            <div class="row justify-content-center">
+                <!-- Info Kontak dan Peta Lokasi -->
+                <div class="col-lg-5 d-flex align-items-stretch ">
+                    <div class="info">
+                        <div class="address mb-3" style="display: flex; align-items: center;">
+                            <div class="icon-container">
+                                <span class="material-symbols-outlined pin-google">
+                                    location_on
+                                </span>
+                            </div>
+                            <div>
+                                <h4>Kantor:</h4>
+                                <p>Jl. Untung Suropati, Plendungan, Kuripan, Kec. Purwodadi, Kabupaten Grobogan, Jawa Tengah 58112</p>
+                            </div>
+                        </div>
+
+                        <div class="email mb-3" style="display: flex; align-items: center;">
+                            <div class="icon-container">
+                                <i class="fa fa-envelope"></i> <!-- Ikon email dari Font Awesome -->
+                            </div>
+                            <div>
+                                <h4>Email:</h4>
+                                <p><a href="mailto:wulandarifitria433@gmail.com">wulandarifitria433@gmail.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="phone mb-3" style="display: flex; align-items: center;">
+                            <div class="icon-container">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h4>Whatsapp/Telp:</h4>
+                                <p>+6289510811261</p>
+                            </div>
+                        </div>
+
+                        <div class="map-container">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19487.45005264156!2d110.91489855!3d-7.0847885999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70b1bd21865013%3A0x45c06bbf35d2ce80!2sRAMBO%20NETWORK!5e1!3m2!1sid!2sid!4v1728218501809!5m2!1sid!2sid"
+                                frameborder="0"
+                                style="border:0; width: 100%; height: 290px;"
+                                allowfullscreen="">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulir Pesan -->
+                <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+                    <form id="whatsappForm" action="javascript:void(0);" class="php-email-form">
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="nama">Nama Kamu</label>
+                                <input type="text" name="nama" class="form-control" id="name" required="">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="whatsapp">Whatsapp Kamu</label>
+                                <input type="number" class="form-control" name="whatsapp" id="phone" required="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subjek">Subjek</label>
+                            <input type="text" class="form-control" name="subjek" id="subject" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="pesan">Pesan</label>
+                            <textarea class="form-control" name="pesan" id="message" rows="10" required=""></textarea>
+                        </div>
+                        <div class="my-3">
+
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-custom">Kirim Pesan</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+
+
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h3><img src="https://rambo-network.co.id/assets/img/logo.jpeg" style="width: 70%; height: 70%" alt=""></h3>
+                        <p>
+                            Jl. Untung Suropati, Plendungan, Kuripan, Kec. Purwodadi, Kabupaten Grobogan, Jawa Tengah 58112<br><br>
+                            <strong>Whatsapp/Tel:</strong> +6289510811261<br>
+                            <strong>Email:</strong> wulandarifitria433@gmail.com<br>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container footer-bottom clearfix">
+            <div class="copyright">
+                © Copyright <strong><span>RAMBO NETWORK</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                Designed by initial AL</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section'); // Mengambil semua elemen section
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link'); // Mengambil semua link navbar
+
+            function changeActiveLink() {
+                let index = sections.length;
+
+                while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
+                navLinks.forEach((link) => link.classList.remove('active'));
+                navLinks[index].classList.add('active');
+            }
+
+            changeActiveLink(); // Panggil fungsi pada load
+            window.addEventListener('scroll', changeActiveLink); // Tambahkan event listener untuk scroll
+        });
+    </script>
+    <script>
+        window.addEventListener('load', function() {
+            // Sembunyikan preloader setelah halaman sepenuhnya dimuat
+            const preloader = document.getElementById('preloader');
+            preloader.style.display = 'none';
+        });
+
+        document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Mencegah pengiriman form yang standar
+
+            // Ambil data dari form
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // Format pesan
+            const whatsappMessage = `Halo, saya ${name}. Nomor WhatsApp ${phone}. Subjek: ${subject}. Pesan saya: ${message}`;
+
+            // Encode URL
+            const whatsappUrl = `https://wa.me/6281903380735?text=${encodeURIComponent(whatsappMessage)}`;
+
+            // Redirect ke WhatsApp
+            window.open(whatsappUrl, '_blank');
+
+            // Menampilkan pesan bahwa pengiriman berhasil
+            document.querySelector('.sent-message').style.display = 'block';
+        });
+    </script>
+</body>
+
+</html>
