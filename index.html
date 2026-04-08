@@ -1,732 +1,2081 @@
 <!DOCTYPE html>
-<html lang="id" data-theme="dark">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Rambo Network — Internet cepat, stabil, dan terjangkau untuk rumah dan bisnis Anda." />
-  <title>Rambo Network — Internet Tanpa Batas</title>
 
-  <!-- Fonts -->
+  <!-- SEO Meta -->
+  <title>Rambo Network – Internet Murah Cepat & Stabil | WiFi Terjangkau Indonesia</title>
+  <meta name="description" content="Rambo Network – Penyedia layanan internet (ISP) terpercaya di Indonesia. Pasang WiFi baru hanya Rp 50.000, paket mulai Rp 150.000/bulan. Internet cepat, unlimited, support 24/7. Lebih dari 2800 pelanggan puas di 7+ kota." />
+  <meta name="keywords" content="internet murah, wifi murah, ISP Indonesia, pasang wifi, internet rumah, internet unlimited, Rambo Network, internet Grobogan, internet Jawa Tengah" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://rambonetwork.id/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Rambo Network – Internet Cepat & Terjangkau untuk Rumah Anda" />
+  <meta property="og:description" content="Pasang WiFi baru hanya Rp 50.000. Paket internet unlimited mulai Rp 150.000/bulan. Support 24/7. 2800+ pelanggan puas." />
+  <meta property="og:url" content="https://rambonetwork.id/" />
+  <meta property="og:image" content="./images/bg-hero.jpg" />
+  <meta property="og:locale" content="id_ID" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Rambo Network – Internet Murah & Cepat" />
+  <meta name="twitter:description" content="Pasang WiFi baru Rp 50.000. Paket mulai Rp 150k/bulan. Internet unlimited, support 24/7." />
+  <meta name="twitter:image" content="./images/bg-hero.jpg" />
+
+  <!-- Schema Markup: LocalBusiness ISP -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "InternetCafe",
+    "name": "Rambo Network",
+    "description": "Penyedia layanan internet (ISP) terpercaya di Indonesia dengan jaringan menjangkau 7+ kota.",
+    "url": "https://rambonetwork.id",
+    "telephone": "+6289510811261",
+    "email": "admin@rambonetwork.id",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Jl. Untung Suropati, Plendungan, Kuripan",
+      "addressLocality": "Purwodadi",
+      "addressRegion": "Jawa Tengah",
+      "postalCode": "58112",
+      "addressCountry": "ID"
+    },
+    "foundingDate": "2022",
+    "numberOfEmployees": "13",
+    "priceRange": "Rp150.000 - Rp215.000/bulan"
+  }
+  </script>
+
+  <!-- Preload Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="./css/style.css" />
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="./images/rambo.svg" type="image/svg+xml" />
+
+  <style>
+    /* =============================================
+       DESIGN TOKENS & VARIABLES
+    ============================================= */
+    :root {
+      --bg-primary: #08080C;
+      --bg-secondary: #0F0F15;
+      --bg-card: #13131A;
+      --bg-card-hover: #1A1A24;
+      --surface: #1E1E2A;
+      --border: rgba(255,255,255,0.06);
+      --border-hover: rgba(234,51,35,0.3);
+      --red: #EA3323;
+      --red-glow: rgba(234,51,35,0.15);
+      --red-dark: #C4291D;
+      --text-primary: #F1F1F5;
+      --text-secondary: #9999AA;
+      --text-muted: #55556A;
+      --gradient-hero: linear-gradient(135deg, #08080C 0%, #0F0F18 50%, #120A0A 100%);
+      --gradient-red: linear-gradient(135deg, #EA3323 0%, #C4291D 100%);
+      --gradient-card: linear-gradient(135deg, rgba(234,51,35,0.05) 0%, transparent 60%);
+      --shadow-card: 0 4px 24px rgba(0,0,0,0.4);
+      --shadow-red: 0 0 30px rgba(234,51,35,0.2);
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --radius-full: 9999px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --font-display: 'Poppins', sans-serif;
+      --font-body: 'Open Sans', sans-serif;
+    }
+
+    /* =============================================
+       RESET & BASE
+    ============================================= */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1,h2,h3,h4,h5,h6 {
+      font-family: var(--font-display);
+      color: var(--text-primary);
+    }
+
+    a { text-decoration: none; }
+    img { max-width: 100%; }
+
+    ::selection {
+      background: var(--red);
+      color: #fff;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg-primary); }
+    ::-webkit-scrollbar-thumb { background: var(--surface); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--red); }
+
+    /* =============================================
+       NOISE TEXTURE OVERLAY
+    ============================================= */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9998;
+      opacity: 0.4;
+    }
+
+    /* =============================================
+       PRELOADER
+    ============================================= */
+    #preloader {
+      position: fixed;
+      inset: 0;
+      background: var(--bg-primary);
+      z-index: 99999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    #preloader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .preloader-logo {
+      width: 60px;
+      animation: pulse-logo 1.5s ease-in-out infinite;
+    }
+
+    .preloader-bar {
+      width: 200px;
+      height: 2px;
+      background: var(--surface);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .preloader-bar-inner {
+      height: 100%;
+      background: var(--gradient-red);
+      border-radius: 2px;
+      animation: loading-bar 1.8s ease-in-out infinite;
+    }
+
+    @keyframes pulse-logo {
+      0%, 100% { opacity: 0.4; transform: scale(0.95); }
+      50% { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes loading-bar {
+      0% { width: 0%; margin-left: 0; }
+      50% { width: 80%; margin-left: 0; }
+      100% { width: 0%; margin-left: 100%; }
+    }
+
+    /* =============================================
+       NAVBAR
+    ============================================= */
+    #navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 20px 0;
+      transition: var(--transition);
+      background: transparent;
+    }
+
+    #navbar.scrolled {
+      padding: 12px 0;
+      background: rgba(8, 8, 12, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .navbar-brand img { width: 40px; }
+
+    .brand-text {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 2px;
+      color: var(--text-primary);
+      line-height: 1.2;
+    }
+
+    .brand-text span {
+      display: block;
+      color: var(--red);
+    }
+
+    .navbar-nav .nav-link {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary) !important;
+      padding: 8px 16px !important;
+      border-radius: var(--radius-full);
+      transition: var(--transition);
+      letter-spacing: 0.3px;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      color: var(--text-primary) !important;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .btn-nav-cta {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 600;
+      background: var(--gradient-red);
+      color: #fff !important;
+      padding: 9px 22px !important;
+      border-radius: var(--radius-full);
+      border: none;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .btn-nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-red);
+      color: #fff !important;
+    }
+
+    .navbar-toggler {
+      border: 1px solid var(--border);
+      padding: 6px 10px;
+      border-radius: 8px;
+      background: var(--bg-card);
+    }
+
+    .navbar-toggler:focus { box-shadow: none; }
+
+    /* =============================================
+       SECTIONS BASE
+    ============================================= */
+    section {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--red);
+      background: rgba(234,51,35,0.08);
+      border: 1px solid rgba(234,51,35,0.2);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      margin-bottom: 20px;
+    }
+
+    .section-title-main {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      color: var(--text-primary);
+    }
+
+    .section-subtitle {
+      font-size: 17px;
+      color: var(--text-secondary);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    /* =============================================
+       GRID LINES DECORATION
+    ============================================= */
+    .grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    /* =============================================
+       HERO SECTION
+    ============================================= */
+    #home {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: var(--gradient-hero);
+      padding: 120px 0 80px;
+      position: relative;
+    }
+
+    .hero-glow {
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(234,51,35,0.08) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-glow-2 {
+      position: absolute;
+      bottom: -10%;
+      left: -5%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(234,51,35,0.04) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--red);
+      background: rgba(234,51,35,0.08);
+      border: 1px solid rgba(234,51,35,0.2);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      margin-bottom: 28px;
+    }
+
+    .hero-eyebrow .dot {
+      width: 6px; height: 6px;
+      background: var(--red);
+      border-radius: 50%;
+      animation: blink 1.5s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .hero-h1 {
+      font-size: clamp(36px, 5.5vw, 68px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin-bottom: 24px;
+      color: var(--text-primary);
+    }
+
+    .hero-h1 .highlight {
+      background: var(--gradient-red);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 17px;
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+      max-width: 500px;
+      line-height: 1.75;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .btn-primary-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 600;
+      background: var(--gradient-red);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: var(--radius-full);
+      border: none;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .btn-primary-cta:hover {
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(234,51,35,0.35);
+    }
+
+    .btn-primary-cta:hover::before { opacity: 1; }
+
+    .btn-secondary-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      padding: 14px 24px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border);
+      background: transparent;
+      transition: var(--transition);
+    }
+
+    .btn-secondary-cta:hover {
+      color: var(--text-primary);
+      border-color: rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .badge-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    .badge-item svg {
+      flex-shrink: 0;
+    }
+
+    /* Hero Image */
+    .hero-image-wrap {
+      position: relative;
+    }
+
+    .hero-img-frame {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-card), 0 0 60px rgba(234,51,35,0.08);
+    }
+
+    .hero-img-frame img {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .hero-img-frame:hover img { transform: scale(1.03); }
+
+    .hero-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(8,8,12,0.7) 100%);
+    }
+
+    .hero-img-badge {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      background: rgba(13,13,20,0.9);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .badge-stat { text-align: center; }
+    .badge-stat .num {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1;
+    }
+    .badge-stat .lbl {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .badge-divider {
+      width: 1px;
+      height: 32px;
+      background: var(--border);
+    }
+
+    /* =============================================
+       STATS SECTION
+    ============================================= */
+    #stats {
+      padding: 60px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-secondary);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+    }
+
+    .stat-item {
+      background: var(--bg-card);
+      padding: 40px 32px;
+      text-align: center;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .stat-item::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background: var(--gradient-red);
+      transition: width 0.4s ease;
+    }
+
+    .stat-item:hover::before { width: 80%; }
+
+    .stat-item:hover { background: var(--bg-card-hover); }
+
+    .stat-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(234,51,35,0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      color: var(--red);
+      font-size: 18px;
+    }
+
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 6px;
+      font-weight: 500;
+    }
+
+    /* =============================================
+       ABOUT SECTION
+    ============================================= */
+    #about {
+      padding: 100px 0;
+      background: var(--bg-primary);
+    }
+
+    .about-image-wrap {
+      position: relative;
+    }
+
+    .about-img-main {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .about-img-main img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    .about-float-card {
+      position: absolute;
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 16px 20px;
+    }
+
+    .about-float-card.top-right {
+      top: -20px;
+      right: -20px;
+    }
+
+    .about-float-card.bottom-left {
+      bottom: -20px;
+      left: -20px;
+    }
+
+    .float-card-inner {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .float-card-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--gradient-red);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .float-card-text .title {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1;
+    }
+
+    .float-card-text .sub {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .about-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 28px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .about-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      color: var(--text-secondary);
+    }
+
+    .about-bullets li .check {
+      width: 20px;
+      height: 20px;
+      background: rgba(234,51,35,0.1);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--red);
+      font-size: 11px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* =============================================
+       SERVICES SECTION
+    ============================================= */
+    #service {
+      padding: 100px 0;
+      background: var(--bg-secondary);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 36px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      cursor: default;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--gradient-red);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .service-card:hover {
+      border-color: var(--border-hover);
+      background: var(--bg-card-hover);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card), 0 0 40px rgba(234,51,35,0.06);
+    }
+
+    .service-card:hover::before { opacity: 1; }
+
+    .service-icon-wrap {
+      width: 52px;
+      height: 52px;
+      background: rgba(234,51,35,0.1);
+      border: 1px solid rgba(234,51,35,0.2);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      transition: var(--transition);
+    }
+
+    .service-card:hover .service-icon-wrap {
+      background: rgba(234,51,35,0.15);
+      box-shadow: 0 0 20px rgba(234,51,35,0.15);
+    }
+
+    .service-icon-wrap svg { color: var(--red); }
+
+    .service-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text-primary);
+    }
+
+    .service-card p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .service-arrow {
+      position: absolute;
+      top: 32px;
+      right: 32px;
+      width: 32px;
+      height: 32px;
+      background: var(--surface);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 12px;
+      opacity: 0;
+      transform: translateX(-6px);
+      transition: var(--transition);
+    }
+
+    .service-card:hover .service-arrow {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* =============================================
+       PRICING SECTION
+    ============================================= */
+    #paket {
+      padding: 100px 0;
+      background: var(--bg-primary);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .pricing-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 32px 28px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-card);
+    }
+
+    .pricing-card.featured {
+      border-color: var(--red);
+      background: linear-gradient(135deg, rgba(234,51,35,0.06) 0%, var(--bg-card) 60%);
+      box-shadow: 0 0 40px rgba(234,51,35,0.1);
+    }
+
+    .pricing-card.featured:hover {
+      box-shadow: 0 12px 50px rgba(234,51,35,0.2);
+    }
+
+    .pricing-badge {
+      position: absolute;
+      top: 0;
+      right: 24px;
+      background: var(--gradient-red);
+      color: #fff;
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 0 0 10px 10px;
+    }
+
+    .pkg-name {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .pricing-amount {
+      display: flex;
+      align-items: flex-end;
+      gap: 4px;
+      margin-bottom: 4px;
+    }
+
+    .price-currency {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      padding-bottom: 6px;
+    }
+
+    .price-num {
+      font-family: var(--font-display);
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1;
+      letter-spacing: -2px;
+    }
+
+    .price-period {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+
+    .pricing-divider {
+      height: 1px;
+      background: var(--border);
+      margin-bottom: 24px;
+    }
+
+    .pricing-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .pricing-features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .pricing-features li .icon {
+      width: 18px;
+      height: 18px;
+      background: rgba(234,51,35,0.1);
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--red);
+      font-size: 10px;
+      flex-shrink: 0;
+    }
+
+    .speed-tag {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+    }
+
+    .speed-tag span {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .btn-pricing {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 12px;
+      border-radius: var(--radius-full);
+      transition: var(--transition);
+    }
+
+    .btn-pricing-outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+
+    .btn-pricing-outline:hover {
+      border-color: var(--red);
+      color: var(--red);
+      background: rgba(234,51,35,0.05);
+    }
+
+    .btn-pricing-filled {
+      background: var(--gradient-red);
+      border: none;
+      color: #fff;
+    }
+
+    .btn-pricing-filled:hover {
+      color: #fff;
+      box-shadow: var(--shadow-red);
+      transform: translateY(-1px);
+    }
+
+    /* =============================================
+       CTA SECTION
+    ============================================= */
+    #cta-section {
+      padding: 80px 0;
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cta-inner {
+      background: linear-gradient(135deg, #0F0A0A 0%, #1A0808 50%, #0F0A0A 100%);
+      border: 1px solid rgba(234,51,35,0.2);
+      border-radius: var(--radius-xl);
+      padding: 64px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-inner::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 400px;
+      background: radial-gradient(ellipse, rgba(234,51,35,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .cta-inner h2 {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .cta-inner p {
+      font-size: 17px;
+      color: var(--text-secondary);
+      max-width: 480px;
+      margin: 0 auto 40px;
+    }
+
+    .cta-price-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 20px;
+    }
+
+    .cta-price-note::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--text-muted);
+    }
+
+    .cta-price-note::after {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--text-muted);
+    }
+
+    /* =============================================
+       CONTACT SECTION
+    ============================================= */
+    #kontak {
+      padding: 100px 0;
+      background: var(--bg-primary);
+    }
+
+    .contact-info-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 36px;
+      height: 100%;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-item:last-of-type { border-bottom: none; }
+
+    .contact-item-icon {
+      width: 42px;
+      height: 42px;
+      background: rgba(234,51,35,0.1);
+      border: 1px solid rgba(234,51,35,0.15);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--red);
+      font-size: 16px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .contact-item h5 {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .contact-item p, .contact-item a {
+      font-size: 15px;
+      color: var(--text-secondary);
+      margin: 0;
+      transition: color 0.2s;
+    }
+
+    .contact-item a:hover { color: var(--red); }
+
+    .map-wrapper {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      margin-top: 24px;
+    }
+
+    .map-wrapper iframe {
+      display: block;
+      width: 100%;
+      height: 220px;
+      filter: invert(90%) hue-rotate(180deg);
+    }
+
+    /* Contact Form */
+    .contact-form-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 36px;
+    }
+
+    .form-floating label {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .form-floating .form-control,
+    .form-floating .form-control:focus {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      border-radius: 12px;
+      font-size: 15px;
+    }
+
+    .form-floating .form-control:focus {
+      border-color: var(--red);
+      box-shadow: 0 0 0 3px rgba(234,51,35,0.1);
+      outline: none;
+    }
+
+    .form-floating textarea.form-control {
+      min-height: 140px;
+      resize: none;
+    }
+
+    .form-floating .form-control::placeholder { opacity: 0; }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    footer {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+      padding: 60px 0 32px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .footer-brand img { width: 36px; }
+
+    .footer-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 300px;
+    }
+
+    .footer-heading {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      font-size: 14px;
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--text-primary); }
+
+    .footer-social {
+      display: flex;
+      gap: 10px;
+    }
+
+    .social-link {
+      width: 38px;
+      height: 38px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 15px;
+      transition: var(--transition);
+    }
+
+    .social-link:hover {
+      border-color: var(--red);
+      color: var(--red);
+      background: rgba(234,51,35,0.08);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      margin-top: 48px;
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-bottom p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    .footer-bottom span { color: var(--red); }
+
+    /* =============================================
+       BACK TO TOP
+    ============================================= */
+    #back-to-top {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      width: 44px;
+      height: 44px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+      font-size: 16px;
+      cursor: pointer;
+      z-index: 100;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: var(--transition);
+    }
+
+    #back-to-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #back-to-top:hover {
+      border-color: var(--red);
+      color: var(--red);
+      background: rgba(234,51,35,0.08);
+    }
+
+    /* =============================================
+       UTILITIES
+    ============================================= */
+    .text-red { color: var(--red); }
+    .gap-divider { height: 1px; background: var(--border); }
+
+    /* =============================================
+       RESPONSIVE
+    ============================================= */
+    @media (max-width: 992px) {
+      .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+      .services-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-h1 { font-size: clamp(32px, 7vw, 52px); }
+      .about-float-card { display: none; }
+    }
+
+    @media (max-width: 768px) {
+      .pricing-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-cta-group { flex-direction: column; align-items: flex-start; }
+      .hero-badges { flex-direction: column; }
+      .cta-inner { padding: 44px 24px; }
+      .contact-form-card, .contact-info-card { padding: 24px; }
+    }
+
+    @media (max-width: 576px) {
+      .stats-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      #back-to-top { bottom: 20px; right: 20px; }
+    }
+
+    /* =============================================
+       AOS CUSTOM TIMING
+    ============================================= */
+    [data-aos] { pointer-events: none; }
+    [data-aos].aos-animate { pointer-events: auto; }
+  </style>
 </head>
+
 <body>
 
-  <!-- ░░ PRELOADER ░░ -->
-  <div id="preloader" aria-hidden="true">
-    <div class="preloader-ring"></div>
-    <span class="preloader-text">RAMBO</span>
+<!-- PRELOADER -->
+<div id="preloader">
+  <img src="./images/rambo.svg" alt="Rambo Network" class="preloader-logo" />
+  <div class="preloader-bar"><div class="preloader-bar-inner"></div></div>
+</div>
+
+<!-- BACK TO TOP -->
+<button id="back-to-top" aria-label="Kembali ke atas">
+  <i class="fa fa-arrow-up"></i>
+</button>
+
+<!-- ==============================
+     NAVBAR
+============================== -->
+<nav id="navbar">
+  <div class="container d-flex align-items-center justify-content-between">
+    <a class="navbar-brand" href="#home">
+      <img src="./images/rambo.svg" alt="Logo Rambo Network" />
+      <div class="brand-text">
+        RAMBO<span>NETWORK</span>
+      </div>
+    </a>
+
+    <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
+      <i class="fa fa-bars" style="color: var(--red);"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav mx-auto gap-1">
+        <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">Tentang</a></li>
+        <li class="nav-item"><a class="nav-link" href="#service">Layanan</a></li>
+        <li class="nav-item"><a class="nav-link" href="#paket">Paket</a></li>
+        <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+      </ul>
+      <a href="https://wa.me/6289510811261?text=Halo%20admin%2CSaya%20ingin%20berlanggan%20Rambo%20wifi" class="btn-nav-cta" target="_blank" rel="noopener">
+        <i class="fa-brands fa-whatsapp me-2"></i>Daftar Sekarang
+      </a>
+    </div>
   </div>
+</nav>
 
-  <!-- ░░ CURSOR ░░ -->
-  <div class="cursor-dot" id="cursorDot"></div>
-  <div class="cursor-ring" id="cursorRing"></div>
+<!-- ==============================
+     HERO SECTION
+============================== -->
+<section id="home">
+  <div class="grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow-2"></div>
 
-  <!-- ░░ NAVBAR ░░ -->
-  <header id="navbar">
-    <nav class="nav-container">
-      <a href="#home" class="nav-logo" aria-label="Rambo Network Home">
-        <div class="logo-icon">
-          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/>
-            <path d="M12 20 Q20 8 28 20 Q20 32 12 20Z" fill="currentColor" opacity="0.8"/>
+  <div class="container">
+    <div class="row align-items-center g-5">
+
+      <!-- Text Left -->
+      <div class="col-lg-6">
+        <div class="hero-eyebrow" data-aos="fade-down" data-aos-duration="800">
+          <span class="dot"></span>
+          Pasang baru hanya Rp 50.000
+        </div>
+
+        <h1 class="hero-h1" data-aos="fade-up" data-aos-duration="900" data-aos-delay="100">
+          Internet <span class="highlight">Cepat & Stabil</span> untuk Rumah Anda
+        </h1>
+
+        <p class="hero-sub" data-aos="fade-up" data-aos-duration="900" data-aos-delay="200">
+          Nikmati koneksi internet unlimited berkualitas tinggi dengan harga terjangkau. Jangkauan luas di 7+ kota — terkoneksi kapan saja, di mana saja.
+        </p>
+
+        <div class="hero-cta-group" data-aos="fade-up" data-aos-duration="900" data-aos-delay="300">
+          <a href="https://wa.me/6289510811261?text=Halo%20admin%2CSaya%20ingin%20berlanggan%20Rambo%20wifi" class="btn-primary-cta" target="_blank" rel="noopener">
+            <i class="fa-brands fa-whatsapp"></i> Daftar via WhatsApp
+          </a>
+          <a href="#paket" class="btn-secondary-cta">
+            Lihat Paket <i class="fa fa-arrow-right fa-sm"></i>
+          </a>
+        </div>
+
+        <div class="hero-badges" data-aos="fade-up" data-aos-duration="900" data-aos-delay="400">
+          <div class="badge-item">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7.5" stroke="#EA3323" stroke-opacity=".3"/>
+              <path d="M5 8l2 2 4-4" stroke="#EA3323" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Bandwidth Unlimited
+          </div>
+          <div class="badge-item">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7.5" stroke="#EA3323" stroke-opacity=".3"/>
+              <path d="M5 8l2 2 4-4" stroke="#EA3323" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Harga Terjangkau
+          </div>
+          <div class="badge-item">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7.5" stroke="#EA3323" stroke-opacity=".3"/>
+              <path d="M5 8l2 2 4-4" stroke="#EA3323" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Support 24/7
+          </div>
+        </div>
+      </div>
+
+      <!-- Image Right -->
+      <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+        <div class="hero-image-wrap">
+          <div class="hero-img-frame">
+            <img
+              src="./images/bg-hero.jpg"
+              alt="Instalasi WiFi Rambo Network – Internet Cepat untuk Rumah Anda"
+              loading="eager"
+            />
+            <div class="hero-img-overlay"></div>
+          </div>
+
+          <div class="hero-img-badge" data-aos="zoom-in" data-aos-delay="600" data-aos-duration="600">
+            <div class="badge-stat">
+              <div class="num">2800+</div>
+              <div class="lbl">Pelanggan</div>
+            </div>
+            <div class="badge-divider"></div>
+            <div class="badge-stat">
+              <div class="num">7+</div>
+              <div class="lbl">Kota</div>
+            </div>
+            <div class="badge-divider"></div>
+            <div class="badge-stat">
+              <div class="num">24/7</div>
+              <div class="lbl">Support</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==============================
+     STATS SECTION
+============================== -->
+<section id="stats">
+  <div class="container">
+    <div class="stats-grid" data-aos="fade-up" data-aos-duration="800">
+
+      <div class="stat-item">
+        <div class="stat-icon"><i class="fa fa-map-marker-alt"></i></div>
+        <div class="stat-num">7+</div>
+        <div class="stat-label">Kota Terjangkau</div>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-icon"><i class="fa fa-users"></i></div>
+        <div class="stat-num">2800+</div>
+        <div class="stat-label">Pelanggan Aktif</div>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-icon"><i class="fa fa-user-tie"></i></div>
+        <div class="stat-num">13+</div>
+        <div class="stat-label">Tenaga Ahli</div>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-icon"><i class="fa fa-headset"></i></div>
+        <div class="stat-num">24/7</div>
+        <div class="stat-label">Customer Support</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==============================
+     ABOUT SECTION
+============================== -->
+<section id="about">
+  <div class="container">
+
+    <div class="row align-items-center g-5">
+
+      <!-- Image Left -->
+      <div class="col-lg-5" data-aos="fade-right" data-aos-duration="900">
+        <div class="about-image-wrap">
+          <div class="about-img-main">
+            <img
+              src="./images/bg-hero.jpg"
+              alt="Tim Rambo Network – Penyedia Layanan Internet Terpercaya"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="about-float-card top-right" data-aos="zoom-in" data-aos-delay="300">
+            <div class="float-card-inner">
+              <div class="float-card-icon"><i class="fa fa-bolt"></i></div>
+              <div class="float-card-text">
+                <div class="title">Berdiri 2022</div>
+                <div class="sub">Tumbuh bersama komunitas</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-float-card bottom-left" data-aos="zoom-in" data-aos-delay="400">
+            <div class="float-card-inner">
+              <div class="float-card-icon"><i class="fa fa-shield-halved"></i></div>
+              <div class="float-card-text">
+                <div class="title">ISP Terpercaya</div>
+                <div class="sub">Terverifikasi & berlisensi</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text Right -->
+      <div class="col-lg-7" data-aos="fade-left" data-aos-duration="900">
+        <div class="section-label">Tentang Kami</div>
+
+        <h2 class="section-title-main mb-4">
+          ISP Lokal yang Hadir untuk<br>
+          <span class="text-red">Semua Lapisan Masyarakat</span>
+        </h2>
+
+        <p style="color: var(--text-secondary); font-size: 16px; line-height: 1.8;">
+          PT. Rambo Network adalah penyedia layanan internet (ISP) yang berkomitmen menghadirkan koneksi internet cepat, stabil, dan andal. Berdiri sejak 2022, kami telah melayani ribuan rumah tangga dan bisnis di seluruh wilayah Indonesia.
+        </p>
+
+        <ul class="about-bullets">
+          <li>
+            <div class="check"><i class="fa fa-check fa-xs"></i></div>
+            <span>Jaringan menjangkau area perkotaan hingga pedesaan di 7+ kota</span>
+          </li>
+          <li>
+            <div class="check"><i class="fa fa-check fa-xs"></i></div>
+            <span>Teknologi terkini dengan infrastruktur yang andal dan stabil</span>
+          </li>
+          <li>
+            <div class="check"><i class="fa fa-check fa-xs"></i></div>
+            <span>Tim ahli berpengalaman siap membantu instalasi & gangguan</span>
+          </li>
+          <li>
+            <div class="check"><i class="fa fa-check fa-xs"></i></div>
+            <span>Paket fleksibel – dari rumahan hingga kebutuhan bisnis</span>
+          </li>
+          <li>
+            <div class="check"><i class="fa fa-check fa-xs"></i></div>
+            <span>Support pelanggan aktif 24 jam, 7 hari seminggu</span>
+          </li>
+        </ul>
+
+        <a href="https://wa.me/6289510811261?text=Halo%20admin%2CSaya%20ingin%20informasi%20lebih%20lanjut" class="btn-primary-cta" target="_blank" rel="noopener" style="display:inline-flex; width:fit-content;">
+          <i class="fa-brands fa-whatsapp"></i> Hubungi Kami
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==============================
+     SERVICES SECTION
+============================== -->
+<section id="service">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="800">
+      <div class="section-label d-inline-flex">Layanan Kami</div>
+      <h2 class="section-title-main mt-3">Kenapa Pilih Rambo Network?</h2>
+      <p class="section-subtitle mx-auto mt-3">Kami menghadirkan layanan internet terbaik dengan teknologi terkini untuk memenuhi semua kebutuhan digital Anda.</p>
+    </div>
+
+    <div class="services-grid" style="grid-template-columns: repeat(2,1fr);">
+
+      <div class="service-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+        <div class="service-arrow"><i class="fa fa-arrow-up-right"></i></div>
+        <div class="service-icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 -960 960 960" fill="currentColor">
+            <path d="M418-340q24 24 62 23.5t56-27.5l224-336-336 224q-27 18-28.5 55t22.5 61Zm62-460q59 0 113.5 16.5T696-734l-76 48q-33-17-68.5-25.5T480-720q-133 0-226.5 93.5T160-400q0 42 11.5 83t32.5 77h552q23-38 33.5-79t10.5-85q0-36-8.5-70T766-540l48-76q30 47 47.5 100T880-406q1 57-13 109t-41 99q-11 18-30 28t-40 10H204q-21 0-40-10t-30-28q-26-45-40-95.5T80-400q0-83 31.5-155.5t86-127Q252-737 325-768.5T480-800Z"/>
           </svg>
         </div>
-        <div class="logo-text">
-          <span class="logo-main">RAMBO</span>
-          <span class="logo-sub">NETWORK</span>
-        </div>
-      </a>
-
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home" class="nav-link active">Home</a></li>
-        <li><a href="#features" class="nav-link">Layanan</a></li>
-        <li><a href="#pricing" class="nav-link">Paket</a></li>
-        <li><a href="#coverage" class="nav-link">Coverage</a></li>
-        <li><a href="#testimonials" class="nav-link">Testimoni</a></li>
-        <li><a href="#contact" class="nav-link">Kontak</a></li>
-      </ul>
-
-      <div class="nav-actions">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
-          <span class="theme-icon sun"><i class="fa-solid fa-sun"></i></span>
-          <span class="theme-icon moon"><i class="fa-solid fa-moon"></i></span>
-        </button>
-        <a href="https://wa.me/6289510811261?text=Halo%20admin%2C%20saya%20ingin%20berlangganan%20Rambo%20WiFi" class="btn btn-primary btn-sm" target="_blank" rel="noopener">
-          <i class="fa-brands fa-whatsapp"></i> Daftar
-        </a>
-        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
+        <h3>High Speed Internet</h3>
+        <p>Kecepatan download & upload tinggi hingga 15 Mbps untuk streaming 4K, gaming online, dan video conference tanpa buffering.</p>
       </div>
-    </nav>
-  </header>
 
-  <!-- ░░ HERO ░░ -->
-  <section id="home" class="hero">
-    <div class="hero-bg">
-      <div class="hero-grid"></div>
-      <div class="hero-glow glow-1"></div>
-      <div class="hero-glow glow-2"></div>
-      <canvas id="particleCanvas" aria-hidden="true"></canvas>
-    </div>
-
-    <div class="container hero-content">
-      <div class="hero-badge reveal" data-delay="0">
-        <i class="fa-solid fa-bolt"></i>
-        <span>Pasang Baru Hanya Rp 50.000</span>
-      </div>
-      <h1 class="hero-title reveal" data-delay="100">
-        Internet <span class="text-gradient">Kencang</span><br/>
-        Harga <span class="text-gradient">Terjangkau</span>
-      </h1>
-      <p class="hero-sub reveal" data-delay="200">
-        Nikmati koneksi internet unlimited yang stabil dan cepat untuk semua kebutuhan digital Anda — streaming, gaming, kerja dari rumah, dan lainnya.
-      </p>
-      <div class="hero-ctas reveal" data-delay="300">
-        <a href="https://wa.me/6289510811261?text=Halo%20admin%2C%20saya%20ingin%20berlangganan%20Rambo%20WiFi" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
-          <i class="fa-brands fa-whatsapp"></i> Daftar Sekarang
-        </a>
-        <a href="#pricing" class="btn btn-ghost btn-lg">
-          Lihat Paket <i class="fa-solid fa-arrow-right"></i>
-        </a>
-      </div>
-      <div class="hero-stats reveal" data-delay="400">
-        <div class="stat-item">
-          <span class="stat-num" data-target="2800">0</span><span class="stat-plus">+</span>
-          <span class="stat-label">Pelanggan Aktif</span>
+      <div class="service-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+        <div class="service-arrow"><i class="fa fa-arrow-up-right"></i></div>
+        <div class="service-icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 -960 960 960" fill="currentColor">
+            <path d="M480-120q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29ZM254-346l-84-86q59-59 138.5-93.5T480-560q92 0 171.5 35T790-430l-84 84q-44-44-102-69t-124-25q-66 0-124 25t-102 69ZM84-516 0-600q92-94 215-147t265-53q142 0 265 53t215 147l-84 84q-77-77-178.5-120.5T480-680q-116 0-217.5 43.5T84-516Z"/>
+          </svg>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <span class="stat-num" data-target="7">0</span><span class="stat-plus">+</span>
-          <span class="stat-label">Kota Terlayani</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <span class="stat-num" data-target="99">0</span><span class="stat-pct">%</span>
-          <span class="stat-label">Uptime Jaringan</span>
-        </div>
+        <h3>Wireless Coverage Luas</h3>
+        <p>Teknologi wireless modern menjangkau seluruh sudut rumah Anda dengan sinyal stabil tanpa kabel berantakan.</p>
       </div>
-    </div>
 
-    <div class="hero-scroll-hint reveal" data-delay="600">
-      <a href="#features" aria-label="Scroll down">
-        <div class="scroll-dot"></div>
-      </a>
-    </div>
-  </section>
+      <div class="service-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+        <div class="service-arrow"><i class="fa fa-arrow-up-right"></i></div>
+        <div class="service-icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 -960 960 960" fill="currentColor">
+            <path d="M480-40q-112 0-206-51T120-227v107H40v-240h240v80h-99q48 72 126.5 116T480-120q75 0 140.5-28.5t114-77q48.5-48.5 77-114T840-480h80q0 91-34.5 171T791-169q-60 60-140 94.5T480-40Zm-36-160v-52q-47-11-76.5-40.5T324-370l66-26q12 41 37.5 61.5T486-314q33 0 56.5-15.5T566-378q0-29-24.5-47T454-466q-59-21-86.5-50T340-592q0-41 28.5-74.5T446-710v-50h70v50q36 3 65.5 29t40.5 61l-64 26q-8-23-26-38.5T482-648q-35 0-53.5 15T410-592q0 26 23 41t83 35q72 26 96 61t24 77q0 29-10 51t-26.5 37.5Q583-274 561-264.5T514-250v50h-70ZM40-480q0-91 34.5-171T169-791q60-60 140-94.5T480-920q112 0 206 51t154 136v-107h80v240H680v-80h99q-48-72-126.5-116T480-840q-75 0-140.5 28.5t-114 77q-48.5 48.5-77 114T120-480H40Z"/>
+          </svg>
+        </div>
+        <h3>Harga Paling Terjangkau</h3>
+        <p>Paket internet berkualitas mulai Rp 150.000/bulan. Tidak ada biaya tersembunyi — transparan dan jujur untuk semua pelanggan.</p>
+      </div>
 
-  <!-- ░░ MARQUEE ░░ -->
-  <div class="marquee-band" aria-hidden="true">
-    <div class="marquee-track">
-      <span>High Speed</span><span class="sep">✦</span>
-      <span>Unlimited Bandwidth</span><span class="sep">✦</span>
-      <span>24/7 Support</span><span class="sep">✦</span>
-      <span>No Contract</span><span class="sep">✦</span>
-      <span>Low Latency</span><span class="sep">✦</span>
-      <span>Wireless Coverage</span><span class="sep">✦</span>
-      <span>Affordable Price</span><span class="sep">✦</span>
-      <span>High Speed</span><span class="sep">✦</span>
-      <span>Unlimited Bandwidth</span><span class="sep">✦</span>
-      <span>24/7 Support</span><span class="sep">✦</span>
-      <span>No Contract</span><span class="sep">✦</span>
-      <span>Low Latency</span><span class="sep">✦</span>
-      <span>Wireless Coverage</span><span class="sep">✦</span>
-      <span>Affordable Price</span><span class="sep">✦</span>
+      <div class="service-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+        <div class="service-arrow"><i class="fa fa-arrow-up-right"></i></div>
+        <div class="service-icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 -960 960 960" fill="currentColor">
+            <path d="M220-260q-92 0-156-64T0-480q0-92 64-156t156-64q37 0 71 13t61 37l68 62-60 54-62-56q-16-14-36-22t-42-8q-58 0-99 41t-41 99q0 58 41 99t99 41q22 0 42-8t36-22l310-280q27-24 61-37t71-13q92 0 156 64t64 156q0 92-64 156t-156 64q-37 0-71-13t-61-37l-68-62 60-54 62 56q16 14 36 22t42 8q58 0 99-41t41-99q0-58-41-99t-99-41q-22 0-42 8t-36 22L352-310q-27 24-61 37t-71 13Z"/>
+          </svg>
+        </div>
+        <h3>Bandwidth Unlimited</h3>
+        <p>Gunakan internet sepuasnya tanpa batas kuota. Streaming, download, upload — semua tanpa khawatir habis di pertengahan bulan.</p>
+      </div>
+
     </div>
   </div>
+</section>
 
-  <!-- ░░ FEATURES ░░ -->
-  <section id="features" class="section features">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">Keunggulan Kami</span>
-        <h2 class="section-title">Mengapa Memilih <span class="text-gradient">Rambo?</span></h2>
-        <p class="section-desc">Kami memberikan lebih dari sekadar internet — kami menghadirkan pengalaman digital yang luar biasa.</p>
-      </div>
-
-      <div class="features-grid">
-        <div class="feature-card reveal" data-delay="0">
-          <div class="feature-icon">
-            <i class="fa-solid fa-bolt"></i>
-          </div>
-          <h3>Kecepatan Tinggi</h3>
-          <p>Koneksi internet hingga 15 Mbps yang stabil untuk streaming 4K, gaming online, dan video call tanpa buffering.</p>
-          <div class="feature-bar">
-            <div class="feature-bar-fill" style="--w:85%"></div>
-          </div>
-          <span class="feature-bar-label">Up to 15 Mbps</span>
-        </div>
-
-        <div class="feature-card reveal" data-delay="100">
-          <div class="feature-icon">
-            <i class="fa-solid fa-wifi"></i>
-          </div>
-          <h3>Koneksi Wireless</h3>
-          <p>Jangkauan sinyal nirkabel yang luas dan stabil di seluruh area rumah atau bisnis Anda tanpa titik lemah.</p>
-          <div class="feature-chips">
-            <span>2.4 GHz</span><span>5 GHz</span><span>Dual Band</span>
-          </div>
-        </div>
-
-        <div class="feature-card reveal" data-delay="200">
-          <div class="feature-icon">
-            <i class="fa-solid fa-infinity"></i>
-          </div>
-          <h3>Bandwidth Unlimited</h3>
-          <p>Tidak ada batas pemakaian data. Gunakan internet sepuasnya tanpa khawatir throttling atau biaya tambahan.</p>
-          <div class="feature-badge">∞ Tanpa Batas</div>
-        </div>
-
-        <div class="feature-card reveal" data-delay="300">
-          <div class="feature-icon">
-            <i class="fa-solid fa-headset"></i>
-          </div>
-          <h3>Support 24/7</h3>
-          <p>Tim teknisi berpengalaman siap membantu Anda kapan saja melalui WhatsApp, telepon, atau kunjungan langsung.</p>
-          <div class="support-status">
-            <span class="status-dot"></span>
-            <span>Tim online sekarang</span>
-          </div>
-        </div>
-
-        <div class="feature-card reveal" data-delay="400">
-          <div class="feature-icon">
-            <i class="fa-solid fa-shield-halved"></i>
-          </div>
-          <h3>Jaringan Stabil</h3>
-          <p>Infrastruktur fiber optik berkualitas tinggi dengan redundansi berlapis untuk memastikan uptime 99% sepanjang waktu.</p>
-          <div class="uptime-display">
-            <span class="uptime-num">99.9%</span>
-            <span class="uptime-label">SLA Uptime</span>
-          </div>
-        </div>
-
-        <div class="feature-card reveal" data-delay="500">
-          <div class="feature-icon">
-            <i class="fa-solid fa-tag"></i>
-          </div>
-          <h3>Harga Terjangkau</h3>
-          <p>Mulai dari Rp 150.000/bulan dengan pemasangan hanya Rp 50.000. Kualitas premium tanpa menguras kantong.</p>
-          <div class="price-teaser">
-            <span class="price-from">Mulai</span>
-            <span class="price-num">Rp 150k</span>
-            <span class="price-per">/bln</span>
-          </div>
-        </div>
-      </div>
+<!-- ==============================
+     PRICING SECTION
+============================== -->
+<section id="paket">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="800">
+      <div class="section-label d-inline-flex">Paket Internet</div>
+      <h2 class="section-title-main mt-3">Pilih Paket Terbaik untuk Anda</h2>
+      <p class="section-subtitle mx-auto mt-3">Semua paket sudah termasuk bandwidth unlimited. Pilih kecepatan yang sesuai kebutuhan.</p>
     </div>
-  </section>
 
-  <!-- ░░ ABOUT ░░ -->
-  <section id="about" class="section about">
-    <div class="container about-inner">
-      <div class="about-visual reveal">
-        <div class="about-graphic">
-          <div class="ag-ring ag-ring-1"></div>
-          <div class="ag-ring ag-ring-2"></div>
-          <div class="ag-ring ag-ring-3"></div>
-          <div class="ag-center">
-            <i class="fa-solid fa-tower-broadcast"></i>
-          </div>
-          <div class="ag-orbit ag-orbit-1">
-            <div class="ag-planet"><i class="fa-solid fa-house"></i></div>
-          </div>
-          <div class="ag-orbit ag-orbit-2">
-            <div class="ag-planet"><i class="fa-solid fa-building"></i></div>
-          </div>
-          <div class="ag-orbit ag-orbit-3">
-            <div class="ag-planet"><i class="fa-solid fa-mobile-screen"></i></div>
-          </div>
+    <div class="pricing-grid" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+
+      <!-- XS -->
+      <div class="pricing-card">
+        <div class="pkg-name">RAMBO XS</div>
+        <div class="speed-tag">6 <span>Mbps</span></div>
+        <div class="pricing-amount">
+          <span class="price-currency">Rp</span>
+          <span class="price-num">150k</span>
         </div>
-      </div>
-      <div class="about-copy reveal" data-delay="100">
-        <span class="section-tag">Tentang Kami</span>
-        <h2 class="section-title">ISP Lokal yang <span class="text-gradient">Terpercaya</span></h2>
-        <p>PT. Rambo Network adalah penyedia layanan internet (ISP) yang berkomitmen menghadirkan koneksi internet cepat, stabil, dan andal bagi masyarakat Indonesia sejak 2022.</p>
-        <p>Dengan jaringan yang menjangkau area perkotaan hingga pedesaan, kami telah menjadi mitra utama bagi ribuan rumah tangga dan bisnis di seluruh Jawa Tengah dan sekitarnya.</p>
-        <div class="about-milestones">
-          <div class="milestone">
-            <span class="milestone-num">2022</span>
-            <span class="milestone-label">Tahun Berdiri</span>
-          </div>
-          <div class="milestone">
-            <span class="milestone-num">13+</span>
-            <span class="milestone-label">Tenaga Ahli</span>
-          </div>
-          <div class="milestone">
-            <span class="milestone-num">7+</span>
-            <span class="milestone-label">Kota Terlayani</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ░░ PRICING ░░ -->
-  <section id="pricing" class="section pricing">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">Paket Internet</span>
-        <h2 class="section-title">Pilih Paket yang <span class="text-gradient">Tepat</span></h2>
-        <p class="section-desc">Semua paket sudah termasuk bandwidth unlimited dan biaya pemasangan hanya Rp 50.000</p>
-      </div>
-
-      <div class="pricing-grid">
-        <!-- XS -->
-        <div class="pricing-card reveal" data-delay="0">
-          <div class="plan-header">
-            <span class="plan-tag">Starter</span>
-            <h3 class="plan-name">RAMBO XS</h3>
-            <div class="plan-price">
-              <sup>Rp</sup><span class="plan-amount">150</span><span class="plan-unit">k/bln</span>
-            </div>
-          </div>
-          <ul class="plan-features">
-            <li><i class="fa-solid fa-check"></i> Speed Up to <strong>6 Mbps</strong></li>
-            <li><i class="fa-solid fa-check"></i> Bandwidth <strong>Unlimited</strong></li>
-            <li><i class="fa-solid fa-check"></i> Support <strong>WhatsApp</strong></li>
-            <li><i class="fa-solid fa-check"></i> Pasang hanya <strong>Rp 50k</strong></li>
-            <li class="muted"><i class="fa-solid fa-xmark"></i> Priority Support</li>
-          </ul>
-          <a href="https://wa.me/6289510811261?text=Halo%2C%20saya%20ingin%20paket%20RAMBO%20XS" class="btn btn-outline btn-block" target="_blank" rel="noopener">
-            <i class="fa-brands fa-whatsapp"></i> Pesan Sekarang
-          </a>
-        </div>
-
-        <!-- S -->
-        <div class="pricing-card reveal" data-delay="100">
-          <div class="plan-header">
-            <span class="plan-tag">Popular</span>
-            <h3 class="plan-name">RAMBO S</h3>
-            <div class="plan-price">
-              <sup>Rp</sup><span class="plan-amount">165</span><span class="plan-unit">k/bln</span>
-            </div>
-          </div>
-          <ul class="plan-features">
-            <li><i class="fa-solid fa-check"></i> Speed Up to <strong>8 Mbps</strong></li>
-            <li><i class="fa-solid fa-check"></i> Bandwidth <strong>Unlimited</strong></li>
-            <li><i class="fa-solid fa-check"></i> Support <strong>WhatsApp</strong></li>
-            <li><i class="fa-solid fa-check"></i> Pasang hanya <strong>Rp 50k</strong></li>
-            <li class="muted"><i class="fa-solid fa-xmark"></i> Priority Support</li>
-          </ul>
-          <a href="https://wa.me/6289510811261?text=Halo%2C%20saya%20ingin%20paket%20RAMBO%20S" class="btn btn-outline btn-block" target="_blank" rel="noopener">
-            <i class="fa-brands fa-whatsapp"></i> Pesan Sekarang
-          </a>
-        </div>
-
-        <!-- M — FEATURED -->
-        <div class="pricing-card featured reveal" data-delay="200">
-          <div class="plan-badge">🔥 Terlaris</div>
-          <div class="plan-header">
-            <span class="plan-tag">Best Value</span>
-            <h3 class="plan-name">RAMBO M</h3>
-            <div class="plan-price">
-              <sup>Rp</sup><span class="plan-amount">200</span><span class="plan-unit">k/bln</span>
-            </div>
-          </div>
-          <ul class="plan-features">
-            <li><i class="fa-solid fa-check"></i> Speed Up to <strong>10 Mbps</strong></li>
-            <li><i class="fa-solid fa-check"></i> Bandwidth <strong>Unlimited</strong></li>
-            <li><i class="fa-solid fa-check"></i> Support <strong>24/7</strong></li>
-            <li><i class="fa-solid fa-check"></i> Pasang hanya <strong>Rp 50k</strong></li>
-            <li><i class="fa-solid fa-check"></i> Priority Support</li>
-          </ul>
-          <a href="https://wa.me/6289510811261?text=Halo%2C%20saya%20ingin%20paket%20RAMBO%20M" class="btn btn-primary btn-block" target="_blank" rel="noopener">
-            <i class="fa-brands fa-whatsapp"></i> Pesan Sekarang
-          </a>
-        </div>
-
-        <!-- L -->
-        <div class="pricing-card reveal" data-delay="300">
-          <div class="plan-header">
-            <span class="plan-tag">Pro</span>
-            <h3 class="plan-name">RAMBO L</h3>
-            <div class="plan-price">
-              <sup>Rp</sup><span class="plan-amount">215</span><span class="plan-unit">k/bln</span>
-            </div>
-          </div>
-          <ul class="plan-features">
-            <li><i class="fa-solid fa-check"></i> Speed Up to <strong>15 Mbps</strong></li>
-            <li><i class="fa-solid fa-check"></i> Bandwidth <strong>Unlimited</strong></li>
-            <li><i class="fa-solid fa-check"></i> Support <strong>24/7</strong></li>
-            <li><i class="fa-solid fa-check"></i> Pasang hanya <strong>Rp 50k</strong></li>
-            <li><i class="fa-solid fa-check"></i> Priority Support</li>
-          </ul>
-          <a href="https://wa.me/6289510811261?text=Halo%2C%20saya%20ingin%20paket%20RAMBO%20L" class="btn btn-outline btn-block" target="_blank" rel="noopener">
-            <i class="fa-brands fa-whatsapp"></i> Pesan Sekarang
-          </a>
-        </div>
-      </div>
-
-      <p class="pricing-note reveal">
-        <i class="fa-solid fa-circle-info"></i>
-        Semua harga sudah termasuk PPN. Biaya pemasangan perdana hanya <strong>Rp 50.000</strong>.
-      </p>
-    </div>
-  </section>
-
-  <!-- ░░ COVERAGE ░░ -->
-  <section id="coverage" class="section coverage">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">Jangkauan Layanan</span>
-        <h2 class="section-title">Kami Ada di <span class="text-gradient">Wilayah Anda</span></h2>
-        <p class="section-desc">Rambo Network melayani lebih dari 7 kota dan terus berkembang setiap bulannya.</p>
-      </div>
-
-      <div class="coverage-inner">
-        <div class="coverage-map reveal">
-          <div class="map-placeholder">
-            <div class="map-bg"></div>
-            <div class="map-point mp-1 active">
-              <div class="mp-pulse"></div>
-              <div class="mp-dot"></div>
-              <span class="mp-label">Purwodadi</span>
-            </div>
-            <div class="map-point mp-2">
-              <div class="mp-pulse"></div>
-              <div class="mp-dot"></div>
-              <span class="mp-label">Grobogan</span>
-            </div>
-            <div class="map-point mp-3">
-              <div class="mp-pulse"></div>
-              <div class="mp-dot"></div>
-              <span class="mp-label">Demak</span>
-            </div>
-            <div class="map-point mp-4">
-              <div class="mp-pulse"></div>
-              <div class="mp-dot"></div>
-              <span class="mp-label">Kudus</span>
-            </div>
-            <div class="map-point mp-5">
-              <div class="mp-pulse"></div>
-              <div class="mp-dot"></div>
-              <span class="mp-label">Pati</span>
-            </div>
-            <div class="map-point mp-6">
-              <div class="mp-pulse"></div>
-              <div class="mp-dot"></div>
-              <span class="mp-label">Blora</span>
-            </div>
-            <div class="map-point mp-7">
-              <div class="mp-pulse"></div>
-              <div class="mp-dot"></div>
-              <span class="mp-label">Semarang</span>
-            </div>
-            <iframe
-              class="google-map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19487.45005264156!2d110.91489855!3d-7.0847885999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70b1bd21865013%3A0x45c06bbf35d2ce80!2sRAMBO%20NETWORK!5e1!3m2!1sid!2sid!4v1728218501809!5m2!1sid!2sid"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              title="Rambo Network Location">
-            </iframe>
-          </div>
-        </div>
-
-        <div class="coverage-info reveal" data-delay="100">
-          <div class="coverage-stat">
-            <i class="fa-solid fa-location-dot"></i>
-            <div>
-              <span class="cs-num">7+</span>
-              <span class="cs-label">Kota Terlayani</span>
-            </div>
-          </div>
-          <div class="coverage-stat">
-            <i class="fa-solid fa-users"></i>
-            <div>
-              <span class="cs-num">2800+</span>
-              <span class="cs-label">Pelanggan Aktif</span>
-            </div>
-          </div>
-          <div class="coverage-stat">
-            <i class="fa-solid fa-tower-broadcast"></i>
-            <div>
-              <span class="cs-num">50+</span>
-              <span class="cs-label">Tower & Access Point</span>
-            </div>
-          </div>
-          <div class="coverage-stat">
-            <i class="fa-solid fa-expand"></i>
-            <div>
-              <span class="cs-num">500+</span>
-              <span class="cs-label">km² Area Terlayani</span>
-            </div>
-          </div>
-
-          <div class="coverage-cta">
-            <p>Ingin tahu apakah area Anda sudah terlayani?</p>
-            <a href="https://wa.me/6289510811261?text=Halo%2C%20saya%20ingin%20cek%20coverage%20Rambo%20Network%20di%20area%20saya" class="btn btn-primary" target="_blank" rel="noopener">
-              <i class="fa-brands fa-whatsapp"></i> Cek Coverage Saya
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ░░ TESTIMONIALS ░░ -->
-  <section id="testimonials" class="section testimonials">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">Testimoni</span>
-        <h2 class="section-title">Apa Kata <span class="text-gradient">Pelanggan Kami?</span></h2>
-        <p class="section-desc">Lebih dari 2.800 pelanggan telah merasakan kenyamanan internet Rambo Network.</p>
-      </div>
-
-      <div class="testimonials-grid">
-        <div class="testi-card reveal" data-delay="0">
-          <div class="testi-stars">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-          </div>
-          <p>"Sinyal kencang banget, streaming YouTube 4K lancar. Harganya pun cocok di kantong. Sudah 1 tahun langganan tidak pernah kecewa."</p>
-          <div class="testi-author">
-            <div class="testi-avatar" style="--color:#EA3323">B</div>
-            <div>
-              <strong>Budi Santoso</strong>
-              <span>Pelanggan Rambo M · Purwodadi</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="testi-card reveal" data-delay="100">
-          <div class="testi-stars">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-          </div>
-          <p>"Untuk WFH sangat membantu. Video call Zoom tidak pernah putus. Tim teknisi juga responsif sekali, masalah langsung ditangani hari itu."</p>
-          <div class="testi-author">
-            <div class="testi-avatar" style="--color:#0ea5e9">S</div>
-            <div>
-              <strong>Sari Dewi</strong>
-              <span>Pelanggan Rambo L · Grobogan</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="testi-card reveal" data-delay="200">
-          <div class="testi-stars">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
-          </div>
-          <p>"Gaming online tidak lag lagi! Ping stabil di bawah 30ms. Rambo Network beda dari provider lain yang sering down. Recommended banget!"</p>
-          <div class="testi-author">
-            <div class="testi-avatar" style="--color:#10b981">A</div>
-            <div>
-              <strong>Ahmad Rizki</strong>
-              <span>Pelanggan Rambo M · Kudus</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="testi-card reveal" data-delay="300">
-          <div class="testi-stars">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-          </div>
-          <p>"Warung kopi saya jadi ramai setelah pasang WiFi Rambo. Pelanggan puas dengan kecepatan internetnya. Proses pasangnya juga cepat sekali."</p>
-          <div class="testi-author">
-            <div class="testi-avatar" style="--color:#f59e0b">R</div>
-            <div>
-              <strong>Rini Wulandari</strong>
-              <span>Pemilik Usaha · Demak</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="testi-card reveal" data-delay="400">
-          <div class="testi-stars">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-          </div>
-          <p>"Harga Rp 150rb per bulan untuk internet unlimited, itu luar biasa murahnya. Kecepatan tetap bagus meski dipakai banyak perangkat sekaligus."</p>
-          <div class="testi-author">
-            <div class="testi-avatar" style="--color:#8b5cf6">D</div>
-            <div>
-              <strong>Doni Pratama</strong>
-              <span>Pelanggan Rambo XS · Pati</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="testi-card reveal" data-delay="500">
-          <div class="testi-stars">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-          </div>
-          <p>"Sudah coba beberapa provider di daerah saya, Rambo Network yang paling stabil dan paling ramah harganya. CS juga baik dan cepat respon."</p>
-          <div class="testi-author">
-            <div class="testi-avatar" style="--color:#ec4899">L</div>
-            <div>
-              <strong>Lia Kurniasari</strong>
-              <span>Pelanggan Rambo S · Blora</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ░░ CTA BAND ░░ -->
-  <section class="section cta-band">
-    <div class="cta-bg">
-      <div class="cta-glow"></div>
-    </div>
-    <div class="container cta-inner reveal">
-      <div class="cta-text">
-        <h2>Siap Menikmati Internet <span class="text-gradient">Tanpa Batas?</span></h2>
-        <p>Daftar sekarang dan rasakan perbedaannya. Proses pemasangan cepat, harga bersahabat.</p>
-      </div>
-      <div class="cta-actions">
-        <a href="https://wa.me/6289510811261?text=Halo%20admin%2C%20saya%20ingin%20berlangganan%20Rambo%20WiFi" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
-          <i class="fa-brands fa-whatsapp"></i> Daftar Sekarang
-        </a>
-        <a href="tel:+6289510811261" class="btn btn-ghost btn-lg">
-          <i class="fa-solid fa-phone"></i> Hubungi Kami
+        <div class="price-period">per bulan</div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li><span class="icon"><i class="fa fa-check fa-xs"></i></span> Speed hingga 6 Mbps</li>
+          <li><span class="icon"><i class="fa fa-check fa-xs"></i></span> Bandwidth Unlimited</li>
+          <li><span class="icon"><i class="fa fa-check fa-xs"></i></span> Support 24/7</li>
+          <li><span class="icon"><i class="fa fa-check fa-xs"></i></span> Instalasi Rp 50.000</li>
+        </ul>
+        <a href="https://wa.me/6289510811261?text=Halo%20admin%2CSaya%20ingin%20berlanggan%20Rambo%20wifi%20paket%20XS" class="btn-pricing btn-pricing-outline" target="_blank" rel="noopener">
+          <i class="fa-brands fa-whatsapp"></i> Pesan Paket
         </a>
       </div>
-    </div>
-  </section>
 
-  <!-- ░░ CONTACT ░░ -->
-  <section id="contact" class="section contact">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">Kontak</span>
-        <h2 class="section-title">Hubungi <span class="text-gradient">Kami</span></h2>
+      <!-- S -->
+      <div class="pricing-card">
+        <div class="pkg-name">RAMBO S</div>
+        <div class="speed-tag">8 <span>Mbps</span></div>
+        <div class="pricing-amount">
+          <span class="price-currency">Rp</span>
+          <span class="price-num">165k</span>
+        </div>
+        <div class="price-period">per bulan</div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li><span class="icon"><i class="fa fa-check fa-xs"></i></span> Speed hingga 8 Mbps</li>
+          <li><span class="icon"><i class="fa fa-check fa-xs"></i></span> Bandwidth Unlimited</li>
+          <li><span class="icon"><i class="fa fa-check fa-xs"></i></span> Support 24/7</li>
+          <li><span class="icon"><i class="fa fa-check fa-xs"></i></span> Instalasi Rp 50.000</li>
+        </ul>
+        <a href="https://wa.me/6289510811261?text=Halo%20admin%2CSaya%20ingin%20berlanggan%20Rambo%20wifi%20paket%20S" class="btn-pricing btn-pricing-outline" target="_blank" rel="noopener">
+          <i class="fa-brands fa-whatsapp"></i> Pesan Paket
+        </a>
       </div>
 
-      <div class="contact-inner">
-        <div class="contact-info reveal">
-          <div class="ci-item">
-            <div class="ci-icon"><i class="fa-solid fa-location-dot"></i></div>
-            <div class="ci-body">
-              <h4>Kantor Pusat</h4>
+      <!-- M (FEATURED) -->
+      <div class="pricing-card featured">
+        <div class="pricing-badge">🔥 Best Value</div>
+        <div class="pkg-name" style="color: var(--red);">RAMBO M</div>
+        <div class="speed-tag">10 <span>Mbps</span></div>
+        <div class="pricing-amount">
+          <span class="price-currency">Rp</span>
+          <span class="price-num">200k</span>
+        </div>
+        <div class="price-period">per bulan</div>
+        <div class="pricing-divider" style="background: rgba(234,51,35,0.2);"></div>
+        <ul class="pricing-features">
+          <li><span class="icon"><i class="fa fa-check fa-xs"></i></span> Speed hingga 10 Mbps</li>
+          <li><span class="icon"><i class="fa fa-check fa-xs"></i></span> Bandwidth Unlimited</li>
+          <li><span class="icon"><i class="fa fa-check fa-xs"></i></span> Priority Support 24/7</li>
+          <li><span class="icon"><i class="fa fa-check fa-xs"></i></span> Instalasi Rp 50.000</li>
+        </ul>
+        <a href="https://wa.me/6289510811261?text=Halo%20admin%2CSaya%20ingin%20berlanggan%20Rambo%20wifi%20paket%20M" class="btn-pricing btn-pricing-filled" target="_blank" rel="noopener">
+          <i class="fa-brands fa-whatsapp"></i> Pesan Paket
+        </a>
+      </div>
+
+      <!-- L -->
+      <div class="pricing-card">
+        <div class="pkg-name">RAMBO L</div>
+        <div class="speed-tag">15 <span>Mbps</span></div>
+        <div class="pricing-amount">
+          <span class="price-currency">Rp</span>
+          <span class="price-num">215k</span>
+        </div>
+        <div class="price-period">per bulan</div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li><span class="icon"><i class="fa fa-check fa-xs"></i></span> Speed hingga 15 Mbps</li>
+          <li><span class="icon"><i class="fa fa-check fa-xs"></i></span> Bandwidth Unlimited</li>
+          <li><span class="icon"><i class="fa fa-check fa-xs"></i></span> Support 24/7</li>
+          <li><span class="icon"><i class="fa fa-check fa-xs"></i></span> Instalasi Rp 50.000</li>
+        </ul>
+        <a href="https://wa.me/6289510811261?text=Halo%20admin%2CSaya%20ingin%20berlanggan%20Rambo%20wifi%20paket%20L" class="btn-pricing btn-pricing-outline" target="_blank" rel="noopener">
+          <i class="fa-brands fa-whatsapp"></i> Pesan Paket
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==============================
+     CTA SECTION
+============================== -->
+<section id="cta-section">
+  <div class="container">
+    <div class="cta-inner" data-aos="zoom-in" data-aos-duration="900">
+      <h2>Siap Pasang Internet<br>di Rumah Anda?</h2>
+      <p>Bergabung dengan 2800+ pelanggan yang sudah menikmati internet cepat & stabil dari Rambo Network. Proses pemasangan cepat, mudah, terpercaya.</p>
+
+      <a href="https://wa.me/6289510811261?text=Halo%20admin%2CSaya%20ingin%20berlanggan%20Rambo%20wifi" class="btn-primary-cta" style="font-size:16px; padding:16px 36px;" target="_blank" rel="noopener">
+        <i class="fa-brands fa-whatsapp" style="font-size:18px;"></i> Daftar via WhatsApp Sekarang
+      </a>
+
+      <div class="cta-price-note">Biaya instalasi hanya Rp 50.000 &nbsp;•&nbsp; Paket mulai Rp 150.000/bulan</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================
+     CONTACT SECTION
+============================== -->
+<section id="kontak">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="800">
+      <div class="section-label d-inline-flex">Kontak</div>
+      <h2 class="section-title-main mt-3">Ada Pertanyaan? Hubungi Kami</h2>
+      <p class="section-subtitle mx-auto mt-3">Tim kami siap membantu Anda 24/7. Hubungi via WhatsApp atau kirim pesan langsung di sini.</p>
+    </div>
+
+    <div class="row g-4">
+
+      <!-- Info + Map -->
+      <div class="col-lg-5" data-aos="fade-right" data-aos-duration="900">
+        <div class="contact-info-card">
+          <h3 style="font-size:18px; font-weight:700; margin-bottom:24px;">Informasi Kontak</h3>
+
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fa fa-location-dot"></i></div>
+            <div>
+              <h5>Kantor</h5>
               <p>Jl. Untung Suropati, Plendungan, Kuripan, Kec. Purwodadi, Kab. Grobogan, Jawa Tengah 58112</p>
             </div>
           </div>
-          <div class="ci-item">
-            <div class="ci-icon"><i class="fa-brands fa-whatsapp"></i></div>
-            <div class="ci-body">
-              <h4>WhatsApp / Telepon</h4>
-              <p><a href="https://wa.me/6289510811261">+62 895-1081-1261</a></p>
+
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fa fa-envelope"></i></div>
+            <div>
+              <h5>Email</h5>
+              <a href="mailto:admin@rambonetwork.id">admin@rambonetwork.id</a>
             </div>
           </div>
-          <div class="ci-item">
-            <div class="ci-icon"><i class="fa-solid fa-envelope"></i></div>
-            <div class="ci-body">
-              <h4>Email</h4>
-              <p><a href="mailto:admin@rambonetwork.id">admin@rambonetwork.id</a></p>
+
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fa-brands fa-whatsapp"></i></div>
+            <div>
+              <h5>WhatsApp / Telepon</h5>
+              <a href="https://wa.me/6289510811261" target="_blank" rel="noopener">+62 895-1081-1261</a>
             </div>
           </div>
-          <div class="ci-item">
-            <div class="ci-icon"><i class="fa-regular fa-clock"></i></div>
-            <div class="ci-body">
-              <h4>Jam Operasional</h4>
-              <p>Senin – Minggu, 08.00 – 21.00 WIB<br><span class="status-dot"></span> Support darurat 24/7</p>
-            </div>
+
+          <div class="map-wrapper">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19487.45005264156!2d110.91489855!3d-7.0847885999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70b1bd21865013%3A0x45c06bbf35d2ce80!2sRAMBO%20NETWORK!5e1!3m2!1sid!2sid!4v1728218501809!5m2!1sid!2sid"
+              frameborder="0"
+              allowfullscreen
+              loading="lazy"
+              title="Lokasi Kantor Rambo Network"
+            ></iframe>
           </div>
         </div>
-
-        <form class="contact-form reveal" data-delay="100" id="contactForm" novalidate>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="c-name">Nama Lengkap</label>
-              <input type="text" id="c-name" name="nama" placeholder="Nama Anda" required />
-            </div>
-            <div class="form-group">
-              <label for="c-phone">Nomor WhatsApp</label>
-              <input type="tel" id="c-phone" name="whatsapp" placeholder="08xx-xxxx-xxxx" required />
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="c-subject">Subjek</label>
-            <input type="text" id="c-subject" name="subjek" placeholder="Topik pesan Anda" required />
-          </div>
-          <div class="form-group">
-            <label for="c-message">Pesan</label>
-            <textarea id="c-message" name="pesan" rows="5" placeholder="Tulis pesan Anda di sini..." required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-block">
-            <i class="fa-brands fa-whatsapp"></i> Kirim via WhatsApp
-          </button>
-        </form>
       </div>
+
+      <!-- Form -->
+      <div class="col-lg-7" data-aos="fade-left" data-aos-duration="900">
+        <div class="contact-form-card">
+          <h3 style="font-size:18px; font-weight:700; margin-bottom:8px;">Kirim Pesan</h3>
+          <p style="font-size:14px; color:var(--text-muted); margin-bottom:28px;">Pesan Anda akan diteruskan via WhatsApp</p>
+
+          <form id="whatsappForm">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="name" placeholder="Nama Kamu" required />
+                  <label for="name">Nama Kamu</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="tel" class="form-control" id="phone" placeholder="WhatsApp" required />
+                  <label for="phone">Nomor WhatsApp</label>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="subject" placeholder="Subjek" required />
+                  <label for="subject">Subjek</label>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-floating">
+                  <textarea class="form-control" id="message" placeholder="Pesan" required></textarea>
+                  <label for="message">Pesan Anda</label>
+                </div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn-primary-cta w-100 justify-content-center" style="border:none; cursor:pointer;">
+                  <i class="fa-brands fa-whatsapp"></i> Kirim via WhatsApp
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ░░ FOOTER ░░ -->
-  <footer id="footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <a href="#home" class="nav-logo">
-          <div class="logo-icon">
-            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/>
-              <path d="M12 20 Q20 8 28 20 Q20 32 12 20Z" fill="currentColor" opacity="0.8"/>
-            </svg>
+<!-- ==============================
+     FOOTER
+============================== -->
+<footer>
+  <div class="container">
+    <div class="row g-4">
+
+      <div class="col-lg-4">
+        <div class="footer-brand">
+          <img src="./images/rambo.svg" alt="Rambo Network Logo" />
+          <div style="font-family:var(--font-display); font-weight:700; font-size:15px; letter-spacing:1px; color:var(--text-primary);">
+            RAMBO NETWORK
           </div>
-          <div class="logo-text">
-            <span class="logo-main">RAMBO</span>
-            <span class="logo-sub">NETWORK</span>
-          </div>
-        </a>
-        <p>ISP lokal yang berkomitmen menghadirkan internet cepat dan terjangkau untuk semua lapisan masyarakat Indonesia.</p>
-        <div class="footer-social">
-          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://wa.me/6289510811261" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
-          <a href="mailto:admin@rambonetwork.id" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+        <p class="footer-desc">Penyedia layanan internet (ISP) terpercaya dengan jaringan di 7+ kota di Indonesia. Cepat, stabil, terjangkau.</p>
+        <div class="footer-social mt-4">
+          <a href="#" class="social-link" aria-label="Instagram Rambo Network"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/6289510811261" class="social-link" aria-label="WhatsApp Rambo Network"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="mailto:admin@rambonetwork.id" class="social-link" aria-label="Email Rambo Network"><i class="fa fa-envelope"></i></a>
         </div>
       </div>
 
-      <div class="footer-links-group">
-        <h4>Navigasi</h4>
-        <ul>
+      <div class="col-lg-2 col-6">
+        <div class="footer-heading">Navigasi</div>
+        <ul class="footer-links">
           <li><a href="#home">Home</a></li>
-          <li><a href="#features">Layanan</a></li>
-          <li><a href="#pricing">Paket</a></li>
-          <li><a href="#coverage">Coverage</a></li>
-          <li><a href="#testimonials">Testimoni</a></li>
+          <li><a href="#about">Tentang Kami</a></li>
+          <li><a href="#service">Layanan</a></li>
+          <li><a href="#paket">Paket</a></li>
+          <li><a href="#kontak">Kontak</a></li>
         </ul>
       </div>
 
-      <div class="footer-links-group">
-        <h4>Paket</h4>
-        <ul>
-          <li><a href="#pricing">Rambo XS — Rp 150k</a></li>
-          <li><a href="#pricing">Rambo S — Rp 165k</a></li>
-          <li><a href="#pricing">Rambo M — Rp 200k</a></li>
-          <li><a href="#pricing">Rambo L — Rp 215k</a></li>
+      <div class="col-lg-2 col-6">
+        <div class="footer-heading">Paket</div>
+        <ul class="footer-links">
+          <li><a href="#paket">Rambo XS – Rp 150k</a></li>
+          <li><a href="#paket">Rambo S – Rp 165k</a></li>
+          <li><a href="#paket">Rambo M – Rp 200k</a></li>
+          <li><a href="#paket">Rambo L – Rp 215k</a></li>
         </ul>
       </div>
 
-      <div class="footer-links-group">
-        <h4>Kontak</h4>
-        <ul>
-          <li><a href="https://wa.me/6289510811261">+62 895-1081-1261</a></li>
-          <li><a href="mailto:admin@rambonetwork.id">admin@rambonetwork.id</a></li>
-          <li><span>Kab. Grobogan, Jawa Tengah</span></li>
+      <div class="col-lg-4">
+        <div class="footer-heading">Kontak</div>
+        <ul class="footer-links" style="gap:14px;">
+          <li style="display:flex; gap:10px; align-items:flex-start;">
+            <i class="fa fa-location-dot" style="color:var(--red); margin-top:3px; flex-shrink:0;"></i>
+            <span style="color:var(--text-muted); font-size:13px;">Jl. Untung Suropati, Plendungan, Purwodadi, Grobogan 58112</span>
+          </li>
+          <li><i class="fa-brands fa-whatsapp" style="color:var(--red); margin-right:8px;"></i><a href="https://wa.me/6289510811261">+62 895-1081-1261</a></li>
+          <li><i class="fa fa-envelope" style="color:var(--red); margin-right:8px;"></i><a href="mailto:admin@rambonetwork.id">admin@rambonetwork.id</a></li>
         </ul>
       </div>
+
     </div>
 
     <div class="footer-bottom">
-      <div class="container">
-        <span>© 2024 <strong>Rambo Network</strong>. All Rights Reserved.</span>
-        <span>Designed with <i class="fa-solid fa-heart" style="color:#EA3323"></i> by AL</span>
-      </div>
+      <p>© 2024 <span>Rambo Network</span>. All Rights Reserved.</p>
+      <p>Designed with ❤ by <span>initial AL</span></p>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <!-- ░░ BACK TO TOP ░░ -->
-  <button class="back-to-top" id="backToTop" aria-label="Back to top">
-    <i class="fa-solid fa-arrow-up"></i>
-  </button>
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
-  <script src="script.js"></script>
+<script>
+  // AOS Init
+  AOS.init({
+    once: true,
+    easing: 'ease-out-cubic',
+    duration: 900,
+    offset: 60,
+  });
+
+  // Preloader
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      const pre = document.getElementById('preloader');
+      pre.classList.add('hidden');
+      setTimeout(() => pre.remove(), 600);
+    }, 800);
+  });
+
+  // Navbar scroll
+  const navbar = document.getElementById('navbar');
+  const onScroll = () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+    const btt = document.getElementById('back-to-top');
+    btt.classList.toggle('visible', window.scrollY > 400);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Active nav link
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => link.classList.remove('active'));
+        const active = document.querySelector(`.navbar-nav a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4, rootMargin: '-80px 0px 0px 0px' });
+
+  sections.forEach(s => observer.observe(s));
+
+  // Back to top
+  document.getElementById('back-to-top').addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // WhatsApp form
+  document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (!name || !phone || !subject || !message) return;
+
+    const text = `Halo, saya ${name}. Nomor WhatsApp: ${phone}. Subjek: ${subject}. Pesan: ${message}`;
+    window.open(`https://wa.me/6281903380735?text=${encodeURIComponent(text)}`, '_blank');
+    this.reset();
+  });
+
+  // Smooth scroll for all anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href === '#') return;
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+        // Close mobile menu
+        const menu = document.getElementById('navMenu');
+        if (menu.classList.contains('show')) {
+          document.querySelector('.navbar-toggler').click();
+        }
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
